@@ -1,0 +1,10 @@
+{
+    "plugins": [
+        "import"
+    ],
+    "settings": {
+        "import/resolver":{
+            "babel-module": {}
+        }
+    }
+}
