@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { metrics, colors, fonts } from '../../../../styles';
+import { metrics, colors, fonts } from '../../../styles';
 
 const styles = StyleSheet.create({
     container: {
@@ -17,7 +17,6 @@ const styles = StyleSheet.create({
 
     textQuadros: {
         textAlign: 'center',
-        fontWeight: 'bold',
         width: '80%',
         color: colors.light,
     },
