@@ -2,12 +2,12 @@ import React, { Component }from 'react';
 import { View, Text, Image, ScrollView, TouchableOpacity } from 'react-native';
 import { Container, Content, Right, Card, CardItem, Icon, Header, Body, Title, Tabs, Tab, Button } from 'native-base';
 
-import styles from './style';
+import styles from './styles';
 
 class Secretary extends Component {
     static navigationOptions = {
         tabBarIcon: ({ tintColor }) => {
-            return <Icon name="ios-cash-outline" style={{color: tintColor}}/>
+            return <Icon name="ios-barcode-outline" style={{color: tintColor}}/>
         }    
     }
 
@@ -18,7 +18,7 @@ class Secretary extends Component {
                 <TouchableOpacity>
                 <Card style={styles.cardOpacity}>
                     <CardItem style={styles.cardStyle}>
-                        <Icon name="ios-cash" />
+                        <Icon name="ios-barcode" />
                         <Text>Boletos</Text>
                         <Right>
                             <Icon name="arrow-forward" />

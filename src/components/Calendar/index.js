@@ -2,7 +2,9 @@ import React, { Component }from 'react';
 import { View, Text, Image, Alert, ScrollView, TouchableOpacity } from 'react-native';
 import { Container, Content, Toast, Right, Card, CardItem, Icon, Header, Body, Title, Tabs, Tab, Button } from 'native-base';
 
-import styles from './style';
+import { withNavigation } from 'react-navigation';
+
+import styles from './styles';
 
 class Calendar extends Component {
     static navigationOptions = {
@@ -16,8 +18,9 @@ class Calendar extends Component {
             <Container>
             <ScrollView>
             <View style={styles.container}>
-            {/* <TouchableOpacity onPress={() => this.props.navigation.navigate('??')} >      */}
-                <TouchableOpacity>  
+                <TouchableOpacity
+                    onPress={() => this.props.navigation.navigate('Quadros')}
+                >  
                 <Card style={styles.cardOpacity}>
                     <CardItem style={styles.cardStyle}>
                         <Icon name="ios-alarm" />
@@ -29,7 +32,9 @@ class Calendar extends Component {
                 </Card>
                 </TouchableOpacity>
 
-                <TouchableOpacity>
+                <TouchableOpacity
+                    onPress={() => this.props.navigation.navigate('AgendamentoProvas')}
+                >
                 <Card style={styles.cardOpacity}>
                     <CardItem style={styles.cardStyle}>
                         <Icon name="ios-paper" />
@@ -41,7 +46,9 @@ class Calendar extends Component {
                 </Card>
                 </TouchableOpacity>
 
-                <TouchableOpacity>
+                <TouchableOpacity
+                    onPress={() => this.props.navigation.navigate('DataProvas')}
+                >
                 <Card style={styles.cardOpacity}>
                     <CardItem style={styles.cardStyle}>
                         <Icon name="ios-calendar" />
@@ -53,7 +60,9 @@ class Calendar extends Component {
                 </Card>
                 </TouchableOpacity>
 
-                <TouchableOpacity>
+                <TouchableOpacity
+                    onPress={() => this.props.navigation.navigate('Notas')}
+                >
                 <Card style={styles.cardOpacity}>
                     <CardItem style={styles.cardStyle}>
                         <Icon name="ios-arrow-down" />
@@ -95,4 +104,4 @@ class Calendar extends Component {
     }
 }
 
-export default Calendar; 
+export default withNavigation(Calendar); 

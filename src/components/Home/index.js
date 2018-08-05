@@ -1,15 +1,15 @@
 import React, { Component }from 'react';
 import { View, Image } from 'react-native';
 import { Container, Content, Card, CardItem, Thumbnail,
-    Icon, Left, Text, Header, Body, Title, Tabs, Tab, Button } from 'native-base';
+     Left, Icon, Text, Header, Body, Title, Tabs, Tab, Button } from 'native-base';
 
-import styles from './style';
+import styles from './styles';
 
 class Home extends Component { 
-    static navigationOptions = {
+    static navigationOptions = {      
         tabBarIcon: ({ tintColor }) => {
             return <Icon name="ios-bookmark-outline" style={{color: tintColor}}/>
-        }    
+        }
     }
 
     render(){
