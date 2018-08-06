@@ -6,6 +6,7 @@ import SplashScreen from 'react-native-splash-screen';
 import Home from './components/Home';
 import Calendar from './components/Calendar';
 import Secretary from './components/Secretary';
+import Profile from './components/Profile';
 
 import Quadros from './components/Screens/Quadros';
 import AgendamentoProvas from './components/Screens/AgendamentoProvas';
@@ -21,11 +22,7 @@ export default class Index extends Component {
 
     render(){
         return(
-            <MainNavigator>
-                <View>
-                    This is Index.
-                </View>
-            </MainNavigator>
+            <MainNavigator />
         );
     }
 }
@@ -35,7 +32,8 @@ const MainNavigator = createStackNavigator({
         createMaterialTopTabNavigator({
           Home: { screen: Home },
           Calendar: { screen: Calendar },
-          Secretary: { screen: Secretary }
+          Secretary: { screen: Secretary },
+          Profile: { screen: Profile },
       },{
         tabBarPosition: 'bottom',
         animationEnabled: true,
