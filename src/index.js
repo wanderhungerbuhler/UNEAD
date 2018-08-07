@@ -13,9 +13,9 @@ import AgendamentoProvas from './components/Screens/AgendamentoProvas';
 import DataProvas from './components/Screens/DataProvas';
 import Notas from './components/Screens/Notas';
 
-import { createMaterialTopTabNavigator, createTabNavigator, createStackNavigator } from 'react-navigation';
+import { createMaterialTopTabNavigator, createStackNavigator } from 'react-navigation';
 
-export default class Index extends Component {
+class Index extends Component {
     componentDidMount() {
         SplashScreen.hide()
     }
@@ -51,24 +51,19 @@ const MainNavigator = createStackNavigator({
             inactiveTintColor: 'gray',
         },
     })
-}, 
+},
     Quadros: { screen: Quadros },
     AgendamentoProvas: { screen: AgendamentoProvas },
     DataProvas: { screen: DataProvas },
     Notas: { screen: Notas },
 
-},{
-    navigationOptions: {
-        headerStyle: {
-          backgroundColor: 'rgba(33, 55, 149, 1)',
-          elevation: 0,
-        },
-        headerTintColor: 'rgba(255,255,255,.5)',
-        headerTitleStyle: {
-            alignSelf: 'center'
-        }
-        // headerLeft: (
-        //     <Image resizeMode="center" style={{width: 150, height: 60, alignSelf:'center', resizeMode:'contain'}} source={require('./images/logo.png')} />
-        // ),
-    }
-});
+}
+// ,{
+//     navigationOptions: {
+//         headerTitle: <Image resizeMode="center" style={{width: 150, height: 60, alignSelf:'center', resizeMode:'contain'}} source={require('./images/logo-color.png')} />
+//     }
+// }
+);
+
+console.disableYellowBox = true;
+export default Index;
