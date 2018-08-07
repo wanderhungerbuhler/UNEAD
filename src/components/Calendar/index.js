@@ -6,13 +6,13 @@ import styles from './styles';
 
 import Paginas from './Paginas';
 
-class Calendar extends Component {
+export default class Calendar extends Component {
     static navigationOptions = {
         tabBarIcon: ({ tintColor }) => {
             return <Icon name="ios-calendar-outline" style={{color: tintColor}}/>
         }    
     }
-
+    
     render(){
         return(
             <Container>
@@ -39,6 +39,4 @@ class Calendar extends Component {
             </Container>
         );
     }
-}
-
-export default Calendar; 
+} 

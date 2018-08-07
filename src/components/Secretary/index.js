@@ -4,7 +4,7 @@ import { Container, Content, Right, Card, CardItem, Icon, Header, Body, Title, T
 
 import styles from './styles';
 
-class Secretary extends Component {
+export default class Secretary extends Component {
     static navigationOptions = {
         tabBarIcon: ({ tintColor }) => {
             return <Icon name="ios-barcode-outline" style={{color: tintColor}}/>
@@ -54,6 +54,4 @@ class Secretary extends Component {
             </Container>
         );
     }
-}
-
-export default Secretary; 
+} 

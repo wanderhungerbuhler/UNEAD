@@ -6,7 +6,7 @@ import styles from './styles';
 
 export default class Quadros extends Component{
     static navigationOptions = {
-        headerTitle: 'Quadros de Horários'
+        headerTitle: 'Quadros de Horários',
     }
     render(){
         return(

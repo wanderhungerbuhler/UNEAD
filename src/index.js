@@ -3,6 +3,8 @@ import { View, Platform, StyleSheet, Image, Dimensions } from 'react-native';
 import { Container, Header, Tabs, Text, Tab, Left, Body, TabHeading, Icon, Right, Button, Badge, Thumbnail } from 'native-base';
 import SplashScreen from 'react-native-splash-screen';
 
+import { createBottomTabNavigator, createStackNavigator } from 'react-navigation';
+
 import Home from './components/Home';
 import Calendar from './components/Calendar';
 import Secretary from './components/Secretary';
@@ -12,8 +14,6 @@ import Quadros from './components/Screens/Quadros';
 import AgendamentoProvas from './components/Screens/AgendamentoProvas';
 import DataProvas from './components/Screens/DataProvas';
 import Notas from './components/Screens/Notas';
-
-import { createMaterialTopTabNavigator, createStackNavigator } from 'react-navigation';
 
 class Index extends Component {
     componentDidMount() {
@@ -29,7 +29,7 @@ class Index extends Component {
 
 const MainNavigator = createStackNavigator({
     Home: { screen: 
-        createMaterialTopTabNavigator({
+        createBottomTabNavigator({
           Home: { screen: Home },
           Calendar: { screen: Calendar },
           Secretary: { screen: Secretary },
@@ -58,12 +58,13 @@ const MainNavigator = createStackNavigator({
     Notas: { screen: Notas },
 
 }
-// ,{
-//     navigationOptions: {
-//         headerTitle: <Image resizeMode="center" style={{width: 150, height: 60, alignSelf:'center', resizeMode:'contain'}} source={require('./images/logo-color.png')} />
-//     }
-// }
-);
+,{
+    navigationOptions: {
+        headerTitle: <Image resizeMode="center" style={{width: 150, height: 60, alignSelf:'center', resizeMode:'contain'}} source={require('./images/logo-color.png')} />
+    }
+},{
+    initialRouteName: 'Home',
+});
 
 console.disableYellowBox = true;
 export default Index;

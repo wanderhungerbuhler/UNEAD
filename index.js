@@ -1,4 +1,4 @@
 import { AppRegistry } from 'react-native';
-import App from './src';
+import Index from './src';
 
-AppRegistry.registerComponent('UNEAD', () => App);
+AppRegistry.registerComponent('UNEAD', () => Index);

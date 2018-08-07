@@ -5,7 +5,7 @@ import { Container, Content, Card, CardItem, Thumbnail,
 
 import styles from './styles';
 
-class Home extends Component { 
+export default class Home extends Component { 
     static navigationOptions = {      
         tabBarIcon: ({ tintColor }) => {
             return <Icon name="ios-bookmark-outline" style={{color: tintColor}}/>
@@ -18,21 +18,18 @@ class Home extends Component {
             <View style={styles.container}>
                     <Content>
                         <Card>
-                            <CardItem header bordered>
-                                <Left>
-                                    <Thumbnail source={require('../../images/unig.png')} />
+                            <CardItem header>
                                     <Body>
-                                        <Text>UNIG</Text>
+                                        <Text style={{color: '#213795', fontSize: 20, fontWeight: 'bold'}}>
+                                        A UNIG está de cara nova e tras a tecnlogia como caso de inovação.
+                                        </Text>
                                         <Text note>Julho 30, 2018</Text>
                                     </Body>
-                                </Left>
+
                             </CardItem>
                             <CardItem>
                                 <Body>
                                     <Image source={require('../../images/unigwelcome.jpg')} style={{height: 200, width: '100%', flex: 1}} />
-                                    <Text note style={{fontSize: 10, textAlign: 'center', marginTop: 10}}>
-                                        A UNIVERSIDADE IGUAÇU - UNIG foi reconhecida pelo MEC a partir do amadurecimento das Faculdades Unificadas de Nova Iguaçu, pela Portaria MEC nº 1318, de 16 de setembro de 1993, publicada no D.O.U. de 20/09/93, seção I, pág. 14017. Tem como mantenedora a Associação de Ensino Superior de Nova Iguaçu - SESNI, entidade sem fins lucrativos, de natureza filantrópica, com sede e foro na cidade de Nova Iguaçu - Estado do Rio de Janeiro.
-                                    </Text>
                                 </Body>
                             </CardItem>
                         </Card>
@@ -42,5 +39,3 @@ class Home extends Component {
         );
     }
 }
-
-export default Home; 

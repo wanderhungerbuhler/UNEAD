@@ -7,7 +7,10 @@ import styles from './styles';
 const Paginas = props => {
     const { onPress } = props;
     return (
-    <TouchableOpacity onPress={() => {onPress();}}>
+    <TouchableOpacity onPress={() => {
+        console.log('Foi clicado');
+        onPress();
+    }}>
         <Card style={styles.cardOpacity}>
                     <CardItem style={styles.cardStyle}>
                         <Icon name={props.icons} />
