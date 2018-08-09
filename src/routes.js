@@ -3,27 +3,26 @@ import { View, Image, Platform } from 'react-native';
 import { Icon } from 'native-base';
 import { createStackNavigator } from 'react-navigation';
 
+import MainNavigator from './index';
+
 import Main from './index';
-const Btn = () => (
-  <Button vertical rounded transparent style={{marginTop: 10}}>
-      <Icon name="ios-menu" />
-  </Button>
-)
+
+import Quadros from './components/Screens/Quadros';
+// import AgendamentoProvas from './components/Screens/AgendamentoProvas';
+// import DataProvas from './components/Screens/DataProvas';
+// import Notas from './components/Screens/Notas';
+
+
 
 const Navigator = createStackNavigator({
-  Main: { screen: Main }
-});
+  Main: { screen: Main },
+  
+},{
+    Quadros: { screen: Quadros },
+  }
+);
 
 export default class App extends Component {
-    static navigationOptions = {
-      headerLeft: <Btn />,
-      
-      headerTitle: <Image style={{width: 90, height: 80}} source={require('./images/logo-color.png')} />,
-
-      headerRight: <Icon
-          name={Platform.OS === 'android' ? 'ios-notifications' : 'ios-notifications-outline'} style={{paddingRight: 10}} />,
-  }
-
   render(){
     return(<Navigator />);
   }

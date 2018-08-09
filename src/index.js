@@ -3,19 +3,32 @@ import { View, Platform, StyleSheet, Image, Dimensions } from 'react-native';
 import { Container, Header, Tabs, Text, Tab, Left, Body, TabHeading, Icon, Right, Button, Badge, Thumbnail } from 'native-base';
 import SplashScreen from 'react-native-splash-screen';
 
-import { createBottomTabNavigator, createStackNavigator } from 'react-navigation';
+import { createMaterialTopTabNavigator, createStackNavigator } from 'react-navigation';
 
 import Home from './components/Home';
 import Calendar from './components/Calendar';
 import Secretary from './components/Secretary';
 import Profile from './components/Profile';
 
-import Quadros from './components/Screens/Quadros';
-import AgendamentoProvas from './components/Screens/AgendamentoProvas';
-import DataProvas from './components/Screens/DataProvas';
-import Notas from './components/Screens/Notas';
+const Btn = () => (
+    <Button vertical rounded transparent style={{marginTop: 10}}>
+        <Icon name="ios-menu" style={{color:'#333'}} />
+    </Button>
+  )
+
+const Notify = () => (
+    <Button vertical rounded transparent style={{marginTop: 10}}>
+        <Icon name="ios-notifications" style={{color:'#333'}} />
+    </Button>
+)
 
 class Index extends Component {
+    static navigationOptions = {
+        headerLeft: <Btn />,
+        headerTitle: <Image style={{width: 90, height: 80}} source={require('./images/logo-color.png')} />,  
+        headerRight: <Notify />
+    }
+
     componentDidMount() {
         SplashScreen.hide()
     }
@@ -27,43 +40,27 @@ class Index extends Component {
     }
 }
 
-const MainNavigator = createStackNavigator({
-    Home: { screen: 
-        createBottomTabNavigator({
-          Home: { screen: Home },
-          Calendar: { screen: Calendar },
-          Secretary: { screen: Secretary },
-          Profile: { screen: Profile },
-      },{
-        tabBarPosition: 'bottom',
-        animationEnabled: true,
-        swipeEnabled: true,
-        tabBarOptions: {
-            showIcon: true,
-            showLabel: false,
-            style: {
-                backgroundColor: 'white',
-            },
-            indicatorStyle: {
-                backgroundColor: 'transparent',
-            },
-            activeTintColor: '#333',
-            inactiveTintColor: 'gray',
-        },
-    })
-},
-    Quadros: { screen: Quadros },
-    AgendamentoProvas: { screen: AgendamentoProvas },
-    DataProvas: { screen: DataProvas },
-    Notas: { screen: Notas },
-
-}
-,{
-    navigationOptions: {
-        headerTitle: <Image resizeMode="center" style={{width: 150, height: 60, alignSelf:'center', resizeMode:'contain'}} source={require('./images/logo-color.png')} />
-    }
+const MainNavigator = createMaterialTopTabNavigator({
+    Home: { screen: Home },
+    Calendar: { screen: Calendar },
+    Secretary: { screen: Secretary },
+    Profile: { screen: Profile },
 },{
-    initialRouteName: 'Home',
+    tabBarPosition: 'bottom',
+    animationEnabled: true,
+    swipeEnabled: true,
+    tabBarOptions: {
+        showIcon: true,
+        showLabel: false,
+        style: {
+            backgroundColor: 'white',
+        },
+        indicatorStyle: {
+            backgroundColor: 'transparent',
+        },
+        activeTintColor: '#333',
+        inactiveTintColor: 'gray',
+    },
 });
 
 console.disableYellowBox = true;
