@@ -9,5 +9,5 @@ Application for university with ease in access to information of students and te
 ## Authors
 * **Wander Hungerbühler**
 
-# Licenses
+## Licenses
 This project is licensed under the MIT License - see the [LICENSE.md](https://gist.github.com/whungerbuhler/LICENSE.md) file for details
