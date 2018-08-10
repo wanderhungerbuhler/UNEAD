@@ -19,8 +19,8 @@ export default class Profile extends Component {
                 <Icon name="ios-checkmark-circle" style={styles.checkIcon} />
                 <Thumbnail circle large style={styles.avatar} source={{ uri: 'https://avatars3.githubusercontent.com/u/22423436?s=460&v=4' }} />
             <Text style={styles.name}>Wander de S. Hungerbuhler Filho</Text>
-                <Text style={styles.alunoText} note>Matricula: 201602562989</Text>
-                <Text style={styles.alunoText} note>CPF: 145.695.497-05</Text>
+                <Text style={styles.alunoText} note>Matricula: 00000000000</Text>
+                <Text style={styles.alunoText} note>CPF: 000.000.000-00</Text>
                 <Text style={styles.alunoText} note>Data de Nascimento: 05/04/1995</Text>
                 <Text style={styles.alunoText} note>Curso: Sistema da Informação</Text>
                 <Text style={styles.alunoText} note>Validade: 31/12/2018</Text>
